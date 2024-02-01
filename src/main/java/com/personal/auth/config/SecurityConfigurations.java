@@ -20,7 +20,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 
 @Configuration
 @EnableWebSecurity
-public class SecurityConfigurations{
+public class SecurityConfigurations {
 	private static final int STRENGTH = 12;
 	
 	@Autowired
@@ -30,7 +30,7 @@ public class SecurityConfigurations{
 	JwtAuthFilter jwtAuthFilter;
 	
 	@Bean
-	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+	SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		return http
 			.csrf(AbstractHttpConfigurer::disable)
 			.authorizeHttpRequests(
